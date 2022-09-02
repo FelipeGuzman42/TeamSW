@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Channel</th>
+      <th scope="col">Seasons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let s of series" (click)="onSelected(s)">
+      <th scope="row">{{s.id}}</th>
+      <td>{{s.name}}</td>
+      <td>{{s.channel}}</td>
+      <td>{{s.seasons}}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="selected">
+  <app-serie-detail>[serieDetail]="selectedSerie"</app-serie-detail>
+</div>
+<p>Seasons average: {{promedio()}}</p>
